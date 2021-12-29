@@ -12,11 +12,8 @@ dfa: src/dfa.c utf.o hashmap.o
 kmp: src/kmp.c utf.o
 	$(CC) $(CFLAGS) -o $@ $^
 
-utf.o: src/utf.c
+%.o: src/%.c
 	$(CC) $(CFLAGS) -c -o $@ $< 
-
-hashmap.o: src/hashmap.c
-	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
 	rm -f *.o
